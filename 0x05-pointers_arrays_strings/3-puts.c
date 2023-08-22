@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * function that prints a string, followed by a new line, to stdout
+ * _puts -prints a string, followed by a new line, to stdout
  * @str: print string
  */
 void _puts(char *str)
