@@ -5,12 +5,14 @@
  */
 void puts2(char *str)
 {
-        int i = 0;
-        int l = l;
-     while (i < l)
-	{
-		 _putchar(str[i]);
-		 i += 2;
-	}
-	_putchar('\n');
+         int i = 0;
+    while (str[i] != '\0')
+    {
+        if (i % 2 == 0)
+       	{
+            putchar(str[i]);
+        }
+        i++;
+    }
+    putchar('\n');
 }
