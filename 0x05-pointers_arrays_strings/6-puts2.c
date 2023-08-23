@@ -6,7 +6,7 @@
 void puts2(char *str)
 {
         int i = 0;
-        int l = 10;
+        int l = l;
      while (i < l)
 	{
 		 _putchar(str[i]);
