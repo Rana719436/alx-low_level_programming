@@ -1,25 +1,38 @@
-#include "lists.h"
+#include "main.h"
+
 /**
- * print_list - a function that prints all the elements of a list_t list.
- * @h: list.
- * Return: the number of nodes.
+ * binary_to_uint - converts a binary number to an
+ * unsigned int.
+ * @b: binary.
+ *
+ * Return: unsigned int.
  */
 
-size_t print_list(const list_t *h)
+unsigned int binary_to_uint(const char *b)
 {
-	unsigned int nodes = 0;
-	const list_t *next_l;
-next_l = h;
+	unsigned int u;
+	int two, base;
 
-	while (next_l)
+	if (!b)
+		return (0);
+
+	u = 0;
+
+	for (two = 0; b[two] != '\0'; two++)
+		;
+
+	for (two--, base = 1; two >= 0; two--, base *= 2)
 	{
-		if (!next_l->str)
-			printf("[0] (nil)");
-		else
-			printf("[%u] %s", next_l->len, next_l->str);
-		nodes++;
-		next_l = next_l->next;
-		printf("\n");
+		if (b[two] != '0' && b[two] != '1')
+		{
+			return (0);
+		}
+
+		if (b[two] & 1)
+		{
+			u += base;
+		}
 	}
-	return (nodes);
+
+	return (u);
 }
